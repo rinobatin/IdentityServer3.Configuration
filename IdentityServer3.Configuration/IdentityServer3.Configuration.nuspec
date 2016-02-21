@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>IdentityServer3.Configuration</id>
+    <version>1.1.0.0</version>
+    <title>IdentityServer3.Configuration</title>
+    <authors>Mariano.Batin</authors>
+    <owners>Mariano.Batin</owners>
+	<projectUrl>https://github.com/rinobatin/IdentityServer3.Configuration</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Configure IdentityServer3 clients in web.config</description>
+    <copyright>Copyright ©  2016</copyright>
+    <dependencies>
+      <dependency id="IdentityServer3" version="2.4.0" />
+    </dependencies>
+  </metadata>
+</package>

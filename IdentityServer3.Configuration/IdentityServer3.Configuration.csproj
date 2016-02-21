@@ -66,6 +66,7 @@
     <Compile Include="ValueConfigurationElementCollection.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="IdentityServer3.Configuration.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
