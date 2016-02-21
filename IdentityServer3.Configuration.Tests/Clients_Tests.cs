@@ -26,7 +26,7 @@ namespace IdentityServer3.Configuration.Tests
                 ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var section = config.Sections.Get("identityServer3") as IdentityServer3Section;
 
-            section.Clients.Count.ShouldBe(2);
+            section.Clients.Count.ShouldBe(3);
 
             var client1 = section.Clients.First();
 
@@ -245,7 +245,7 @@ namespace IdentityServer3.Configuration.Tests
 
             List<Client> clients = section.Clients.Select(a => a.GetClient()).ToList();
 
-            clients.Count().ShouldBe(2);
+            clients.Count().ShouldBe(3);
 
         }
     }

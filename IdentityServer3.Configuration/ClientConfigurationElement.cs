@@ -11,7 +11,7 @@ namespace IdentityServer3.Configuration
         [ConfigurationProperty("id", IsRequired = true, IsKey = true)]
         public string Id => base["id"] as string;
 
-        [ConfigurationProperty("name", IsRequired = true)]
+        [ConfigurationProperty("name")]
         public string Name => base["name"] as string;
 
         [ConfigurationProperty("enabled", DefaultValue = true)]
@@ -85,12 +85,12 @@ namespace IdentityServer3.Configuration
         public bool AllowRememberConsent => Convert.ToBoolean(base["allowRememberConsent"]);
 
 
-        [ConfigurationProperty("allowedScopes", IsRequired = true)]
+        [ConfigurationProperty("allowedScopes")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
         public ValueConfigurationElementCollection<AllowedScopeConfigurationElement> AllowedScopes => 
             (ValueConfigurationElementCollection<AllowedScopeConfigurationElement>)this["allowedScopes"];
 
-        [ConfigurationProperty("secrets", IsRequired = true)]
+        [ConfigurationProperty("secrets")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
         public ValueConfigurationElementCollection<SecretConfigurationElement> Secrets => 
             (ValueConfigurationElementCollection<SecretConfigurationElement>)this["secrets"];
