@@ -97,30 +97,30 @@ namespace IdentityServer3.Configuration
 
         [ConfigurationProperty("redirectUris")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
-        public ValueConfigurationElementCollection<RedirectUriConfigurationElement> RedirectUris => 
-            (ValueConfigurationElementCollection<RedirectUriConfigurationElement>)this["redirectUris"];
+        public NameValueConfigurationElementCollection<NameValueConfigurationElement> RedirectUris => 
+            (NameValueConfigurationElementCollection<NameValueConfigurationElement>)this["redirectUris"];
 
         [ConfigurationProperty("postLogoutRedirectUris")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
-        public ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement> PostLogoutRedirectUris => 
-            (ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement>)this["postLogoutRedirectUris"];
+        public NameValueConfigurationElementCollection<NameValueConfigurationElement> PostLogoutRedirectUris => 
+            (NameValueConfigurationElementCollection<NameValueConfigurationElement>)this["postLogoutRedirectUris"];
 
 
         [ConfigurationProperty("identityProviderRestrictions")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
-        public ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement> IdentityProviderRestrictions =>
-            (ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement>)this["identityProviderRestrictions"];
+        public ValueConfigurationElementCollection<ValueConfigurationElement> IdentityProviderRestrictions =>
+            (ValueConfigurationElementCollection<ValueConfigurationElement>)this["identityProviderRestrictions"];
 
 
         [ConfigurationProperty("allowedCustomGrantTypes")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
-        public ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement> AllowedCustomGrantTypes =>
-            (ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement>)this["allowedCustomGrantTypes"];
+        public ValueConfigurationElementCollection<ValueConfigurationElement> AllowedCustomGrantTypes =>
+            (ValueConfigurationElementCollection<ValueConfigurationElement>)this["allowedCustomGrantTypes"];
 
         [ConfigurationProperty("allowedCorsOrigins")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
-        public ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement> AllowedCorsOrigins =>
-            (ValueConfigurationElementCollection<PostLogoutRedirectUriConfigurationElement>)this["allowedCorsOrigins"];
+        public ValueConfigurationElementCollection<ValueConfigurationElement> AllowedCorsOrigins =>
+            (ValueConfigurationElementCollection<ValueConfigurationElement>)this["allowedCorsOrigins"];
 
         [ConfigurationProperty("claims")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]

@@ -58,11 +58,11 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="GenericConfigurationElementCollection.cs" />
     <Compile Include="IdentityServer3Section.cs" />
-    <Compile Include="PostLogoutRedirectUriConfigurationElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedirectUriConfigurationElement.cs" />
     <Compile Include="SecretConfigurationElement.cs" />
+    <Compile Include="NameValueConfigurationElement.cs" />
     <Compile Include="ValueConfigurationElement.cs" />
+    <Compile Include="NameValueConfigurationElementCollection.cs" />
     <Compile Include="ValueConfigurationElementCollection.cs" />
   </ItemGroup>
   <ItemGroup>
