@@ -2,11 +2,13 @@
 
 This library lets you configure IdentityServer3 clients in the web.config file.
 
+Example
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
-    <section name="identityServer3" type="IdentityServer3.Configuration.IdentityServer3Section,IdentityServer3.Configuration"/>
+    <section name="identityServer3" 
+             type="IdentityServer3.Configuration.IdentityServer3Section,IdentityServer3.Configuration"/>
   </configSections>
   <identityServer3>
     <clients>
@@ -42,7 +44,10 @@ This library lets you configure IdentityServer3 clients in the web.config file.
           <add value="abc" />
         </allowedScopes>
         <secrets>
-          <add value="secret1" description="this is the first secret"  type="AnotherType" expiration="2017-01-01 12:03 PM"/>
+          <add value="secret1" 
+               description="this is the first secret"  
+               type="AnotherType" 
+               expiration="2017-01-01 12:03 PM"/>
           <add value="secret2" />
         </secrets>
         <redirectUris>
