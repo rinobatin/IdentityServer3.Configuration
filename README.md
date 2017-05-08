@@ -49,7 +49,9 @@ Example
                type="AnotherType" 
                expiration="2017-01-01 12:03 PM"/>
           <add value="secret2" />
-        </secrets>
+          <add value="secret256" hashtype="sha256" />
+          <add value="secret512" hashtype="sha512" />
+       </secrets>
         <redirectUris>
           <add name="website1" value="http://localhost:59328/" />
           <add name="website2" value="http://localhost:7777/webui/" />

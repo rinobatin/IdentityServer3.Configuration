@@ -1,5 +1,6 @@
 using System;
 using System.Configuration;
+using IdentityServer3.Core.Models;
 
 namespace IdentityServer3.Configuration
 {
@@ -42,6 +43,40 @@ namespace IdentityServer3.Configuration
             set
             {
                 this["expiration"] = value;
+            }
+        }
+
+        [ConfigurationProperty("value")]
+        new public string Value
+        {
+            get
+            {
+                if (this["value"] != null)
+                {
+                    if (HashType.Equals("sha256", StringComparison.CurrentCultureIgnoreCase))
+                        return ((string)(this["value"])).Sha256();
+                    else if (HashType.Equals("sha512", StringComparison.CurrentCultureIgnoreCase))
+                        return ((string)(this["value"])).Sha512();
+                }
+
+                return (string)this["value"];
+            }
+            set
+            {
+                this["value"] = value;
+            }
+        }
+
+        [ConfigurationProperty("hashtype")]
+        public string HashType
+        {
+            get
+            {
+                return (string)this["hashtype"] ?? string.Empty;
+            }
+            set
+            {
+                this["hashtype"] = value;
             }
         }
     }
