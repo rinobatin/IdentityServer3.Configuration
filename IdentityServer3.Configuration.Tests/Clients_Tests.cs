@@ -113,7 +113,7 @@ namespace IdentityServer3.Configuration.Tests
 
             var client = section.Clients.First();
             var secrets = client.Secrets.ToList();
-            secrets.Count.ShouldBe(2);
+            secrets.Count.ShouldBe(4);
 
             var firstSecret = secrets.First();
             firstSecret.Value.ShouldBe("secret1");
@@ -129,11 +129,15 @@ namespace IdentityServer3.Configuration.Tests
             //http://stackoverflow.com/questions/29799341/configuration-string-with-null-defaultvalue
             secondSecret.Description.ShouldBe("");
             secondSecret.Type.ShouldBe("SharedSecret");
-
-
             secondSecret.Expiration.ShouldBeNull();
 
+            var secret256 = secrets.Skip(2).Take(1).First();
+            secret256.HashType.ShouldBe("sha256");
+            secret256.Value.ShouldBe("secret256".Sha256());
 
+            var secret512 = secrets.Skip(3).Take(1).First();
+            secret512.HashType.ShouldBe("sha512");
+            secret512.Value.ShouldBe("secret512".Sha512());
         }
 
         [TestMethod]
