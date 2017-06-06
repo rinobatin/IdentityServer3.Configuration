@@ -168,7 +168,7 @@ namespace IdentityServer3.Configuration
             client.RequireConsent = RequireConsent;
             client.AllowRememberConsent = AllowRememberConsent;
             client.LogoUri = LogoUri;
-            client.ClientUrl = ClientUri;
+            client.ClientUri = ClientUri;
 
             return client;
         }
