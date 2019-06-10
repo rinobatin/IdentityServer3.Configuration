@@ -51,6 +51,9 @@ namespace IdentityServer3.Configuration
         [ConfigurationProperty("logoUri")]
         public string LogoUri => base["logoUri"] as string;
 
+        [ConfigurationProperty("logoutUri")]
+        public string LogoutUri => base["logoutUri"] as string;
+
         [ConfigurationProperty("logoutSessionRequired", DefaultValue = true)]
         public bool LogoutSessionRequired => Convert.ToBoolean(base["logoutSessionRequired"]);
 
@@ -84,6 +87,11 @@ namespace IdentityServer3.Configuration
         [ConfigurationProperty("allowRememberConsent", DefaultValue = true)]
         public bool AllowRememberConsent => Convert.ToBoolean(base["allowRememberConsent"]);
 
+        [ConfigurationProperty("allowClientCredentialsOnly", DefaultValue = false)]
+        public bool AllowClientCredentialsOnly => Convert.ToBoolean(base["allowClientCredentialsOnly"]);
+
+        [ConfigurationProperty("allowAccessTokenViaBrowser", DefaultValue = false)]
+        public bool AllowAccessTokenViaBrowser => Convert.ToBoolean(base["allowAccessTokenViaBrowser"]);
 
         [ConfigurationProperty("allowedScopes")]
         [ConfigurationCollection(typeof(ClientConfigurationElement), AddItemName = "add")]
@@ -149,6 +157,7 @@ namespace IdentityServer3.Configuration
             client.IdentityProviderRestrictions = IdentityProviderRestrictions.Select(a => a.Value).ToList();
             client.AllowedCustomGrantTypes = AllowedCustomGrantTypes.Select(a => a.Value).ToList();
             client.AllowedCorsOrigins = AllowedCorsOrigins.Select(a => a.Value).ToList();
+            client.LogoutUri = LogoutUri;
             client.LogoutSessionRequired = LogoutSessionRequired;
             client.Enabled = Enabled;
             client.EnableLocalLogin = EnableLocalLogin;
@@ -169,6 +178,8 @@ namespace IdentityServer3.Configuration
             client.AllowRememberConsent = AllowRememberConsent;
             client.LogoUri = LogoUri;
             client.ClientUri = ClientUri;
+            client.AllowClientCredentialsOnly = AllowClientCredentialsOnly;
+            client.AllowAccessTokensViaBrowser = AllowAccessTokenViaBrowser;
 
             return client;
         }
