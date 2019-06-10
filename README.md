@@ -20,6 +20,7 @@ Example
           identityTokenLifetime="1800"
           accessTokenLifetime="2400"
           clientUri="http://localhost:8080"
+          logoutUri="http://localhost:8080"
           logoutSessionRequired="false"
           enableLocalLogin="false"
           allowAccessToAllScopes="true"
@@ -36,6 +37,8 @@ Example
           refreshTokenUsage="ReUse"
           refreshTokenExpiration="Sliding"
           accessTokenType="Reference"
+          allowClientCredentialsOnly="false"
+          allowAccessTokensViaBrowser="true"
           logoUri="https://test.xyz/logo.png">
         <allowedScopes>
           <add  value="openid" />

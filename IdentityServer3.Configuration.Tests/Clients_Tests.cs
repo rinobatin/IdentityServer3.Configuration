@@ -38,6 +38,7 @@ namespace IdentityServer3.Configuration.Tests
             client1.IdentityTokenLifetime.ShouldBe(1800);
             client1.AccessTokenLifetime.ShouldBe(2400);
             client1.ClientUri.ShouldBe("http://localhost:8080");
+            client1.LogoutUri.ShouldBe("http://localhost:8080");
             client1.LogoutSessionRequired.ShouldBe(false);
             client1.EnableLocalLogin.ShouldBe(false);
             client1.AllowAccessToAllScopes.ShouldBe(true);
@@ -49,6 +50,8 @@ namespace IdentityServer3.Configuration.Tests
             client1.UpdateAccessTokenClaimsOnRefresh.ShouldBe(true);
             client1.RequireSignOutPrompt.ShouldBe(true);
             client1.AllowRememberConsent.ShouldBe(false);
+            client1.AllowClientCredentialsOnly.ShouldBe(false);
+            client1.AllowAccessTokenViaBrowser.ShouldBe(true);
             client1.AbsoluteRefreshTokenLifetime.ShouldBe(1000);
             client1.SlidingRefreshTokenLifetime.ShouldBe(2000);
             client1.RefreshTokenUsage.ShouldBe(TokenUsage.ReUse);
@@ -67,6 +70,7 @@ namespace IdentityServer3.Configuration.Tests
             client2.IdentityTokenLifetime.ShouldBe(300);
             client2.AccessTokenLifetime.ShouldBe(3600);
             client2.ClientUri.ShouldBe("http://localhost:9090");
+            client2.LogoutUri.ShouldBe("http://localhost:9090");
             client2.LogoutSessionRequired.ShouldBe(true);
             client2.EnableLocalLogin.ShouldBe(true);
             client2.AllowAccessToAllScopes.ShouldBe(false);
@@ -75,6 +79,8 @@ namespace IdentityServer3.Configuration.Tests
             client2.PrefixClientClaims.ShouldBe(true);
             client2.RequireConsent.ShouldBe(true);
             client2.AllowRememberConsent.ShouldBe(true);
+            client1.AllowClientCredentialsOnly.ShouldBe(false);
+            client1.AllowAccessTokenViaBrowser.ShouldBe(true);
             client2.AbsoluteRefreshTokenLifetime.ShouldBe(2592000);
             client2.SlidingRefreshTokenLifetime.ShouldBe(1296000);
             client2.RefreshTokenUsage.ShouldBe(TokenUsage.OneTimeOnly);
