@@ -110,3 +110,5 @@ To get the clients in your code,
 ```c#
 IdentityServer3.Configuration.Configuration.GetClients()
 ```
+
+MIT License
